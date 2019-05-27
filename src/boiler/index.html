@@ -1,0 +1,47 @@
+
+    <form  onSubmit={getSearch} class="col s12">
+        <div className="row">
+          <div className="input-field col s6">
+            <input
+             
+              className="validate"
+              type="text"
+              value={search}
+              onChange={updateSearch}
+             >
+            <label for="first_name">Enter Recipe Name</label>
+          </div>
+          <button className="btn waves-effect waves-light" 
+        
+          type="submit"
+          >Search
+              <i className="material-icons right">send</i>
+            </button>
+                  
+        </div> 
+      </form>
+ 
+
+
+      <div className="row">
+        <div className="col s12 m7">
+          <div className="card">
+            <div className="card-image">
+              <img src={image} >
+              <span className="card-title">{title}</span>
+            </div>
+            <div className="card-content">
+                 
+                <li className="card-header">Ingredients</li>
+                  <ol className="card-content" >
+                    {ingredients.map(ingredient => (
+                      <li class="collection-item" > {ingredient.text}</li>
+                    ))}
+                  </ol> 
+            </div>
+            <div className="card-action">
+                {calories}
+            </div>
+          </div>
+        </div>
+      </div>
